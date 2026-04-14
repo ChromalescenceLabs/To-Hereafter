@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bfxdad2vmpkx"]
+
+[ext_resource type="Script" uid="uid://6mu6w0belh46" path="res://Scripts/options_menu.gd" id="1_1jju4"]
+[ext_resource type="Texture2D" uid="uid://3a0hxqps0jsb" path="res://Assets/Main Menu/Quit.png" id="2_ayvsw"]
+[ext_resource type="Texture2D" uid="uid://82arg3ping28" path="res://Assets/Main Menu/QuitH.png" id="3_s3xhb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrbyj"]
+bg_color = Color(0.40709013, 0.5863071, 0.84504277, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jju4"]
+bg_color = Color(0.60624725, 0.61286354, 0.9425499, 1)
+
+[node name="OptionsMenu" type="Control" unique_id=1242401494]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jju4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=360663004]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.69232
+offset_top = -152.0
+offset_right = 258.69232
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.06654745, 0.079980336, 0.15821299, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1681188626]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -892.00006
+offset_top = -555.0
+offset_right = 902.0
+offset_bottom = 523.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.06654745, 0.079980336, 0.15821299, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=289374257]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.14801
+offset_top = -124.591995
+offset_right = -18.835999
+offset_bottom = -97.028076
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.67, 2.67)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Options"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=858886571]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -36.0
+offset_right = 211.91406
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AudioControl" type="HSlider" parent="VBoxContainer" unique_id=1581096199]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_jrbyj")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_1jju4")
+min_value = -80.0
+max_value = 0.0
+
+[node name="FullscreenToggle" type="CheckButton" parent="VBoxContainer" unique_id=203240500]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 6
+button_pressed = true
+text = "Fullscreen"
+
+[node name="QuitOptions" type="TextureButton" parent="VBoxContainer" unique_id=318141627]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_ayvsw")
+texture_pressed = ExtResource("2_ayvsw")
+texture_hover = ExtResource("3_s3xhb")
+
+[connection signal="value_changed" from="VBoxContainer/AudioControl" to="." method="_on_audio_control_value_changed"]
+[connection signal="toggled" from="VBoxContainer/FullscreenToggle" to="." method="_on_fullscreen_toggle_toggled"]
+[connection signal="pressed" from="VBoxContainer/QuitOptions" to="." method="_on_quit_options_pressed"]

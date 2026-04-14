@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://f1pyot7nea26"]
+
+[ext_resource type="Script" uid="uid://bbvenmgj1c6y8" path="res://buffer_area.gd" id="1_1sao5"]
+[ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
+[ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Angel.tscn" id="3_1sao5"]
+[ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="4_dinao"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ht0s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1sao5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dx6ns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ht0s"]
+size = Vector2(3505, 102)
+
+[node name="Buffer Area" type="Node2D" unique_id=909989474]
+script = ExtResource("1_1sao5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=686778178]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=1966244168]
+position = Vector2(638.5, 362.49994)
+scale = Vector2(1389, 808.9999)
+texture = SubResource("PlaceholderTexture2D_7ht0s")
+
+[node name="Player" parent="." unique_id=572479440 instance=ExtResource("1_dx6ns")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(462, 663)
+metadata/_edit_group_ = true
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1211618507]
+position = Vector2(2, 0)
+zoom = Vector2(0.935, 0.935)
+position_smoothing_enabled = true
+position_smoothing_speed = 9.0
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1240100353]
+position = Vector2(655, 769)
+physics_material_override = SubResource("PhysicsMaterial_1sao5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=1484631529]
+position = Vector2(1.1920929e-07, 148.44458)
+scale = Vector2(3498.0002, 399.11075)
+texture = SubResource("PlaceholderTexture2D_dx6ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=509893825]
+shape = SubResource("RectangleShape2D_7ht0s")
+
+[node name="Angel" parent="." unique_id=892918844 instance=ExtResource("3_1sao5")]
+y_sort_enabled = true
+position = Vector2(162, 594)
+scale = Vector2(-0.44956776, 0.9358491)
+
+[node name="SelectionWheel" parent="." unique_id=1740633210 instance=ExtResource("4_dinao")]

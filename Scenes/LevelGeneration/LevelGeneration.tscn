@@ -1,0 +1,299 @@
+[gd_scene format=3 uid="uid://c6yf5n1fbfsm8"]
+
+[ext_resource type="Script" uid="uid://2risb3kak1sq" path="res://Scripts/Level Generation/level_generation.gd" id="1_75ddt"]
+[ext_resource type="Texture2D" uid="uid://lbqtmhcbmexf" path="res://Assets/Tilesets/Tileset.png" id="1_bosrh"]
+[ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="3_75ddt"]
+[ext_resource type="Shader" uid="uid://5cpe62pdgebg" path="res://Shaders/Inversion.gdshader" id="3_usupu"]
+[ext_resource type="PackedScene" uid="uid://brbsrt3iax1g0" path="res://Scenes/fireball.tscn" id="5_h07ui"]
+
+[sub_resource type="Environment" id="Environment_15f4b"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 2.0
+adjustment_enabled = true
+adjustment_brightness = 0.94
+adjustment_contrast = 1.175
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11o54"]
+texture = ExtResource("1_bosrh")
+7:5/0 = 0
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.9575672, 8, -1.3057747, 8, 8, -8, 8)
+9:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cxncl"]
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_11o54")
+
+[sub_resource type="Animation" id="Animation_usupu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/thickness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/force")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/center")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_h07ui"]
+resource_name = "timeStopIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/thickness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/force")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/center")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_15f4b"]
+resource_name = "timeStopOut"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/thickness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/force")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/center")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15f4b"]
+_data = {
+&"RESET": SubResource("Animation_usupu"),
+&"timeStopIn": SubResource("Animation_h07ui"),
+&"timeStopOut": SubResource("Animation_15f4b")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72wke"]
+shader = ExtResource("3_usupu")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.1
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.01
+
+[node name="LevelGeneration" type="Node2D" unique_id=1535418331 node_paths=PackedStringArray("tilemap", "player")]
+process_mode = 1
+script = ExtResource("1_75ddt")
+tilemap = NodePath("TileMapLayer")
+player = NodePath("Player")
+roomAmt = 50
+maxRoomWidthRange = 50
+maxRoomHeightRange = 20
+bg = "uid://vhge4lgu8juk"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1686027872]
+environment = SubResource("Environment_15f4b")
+
+[node name="Player" parent="." unique_id=572479440 instance=ExtResource("3_75ddt")]
+process_mode = 1
+self_modulate = Color(4.025963, 4.025963, 4.025963, 1)
+position = Vector2(271, 70)
+scale = Vector2(0.49, 0.49)
+speed = 10.0
+jump_height = 25.0
+jump_time_to_peak = 0.2
+dash_speed = 25.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481562400]
+process_mode = 1
+zoom = Vector2(2.185, 2.185)
+
+[node name="fireball" parent="Player" unique_id=1011340402 instance=ExtResource("5_h07ui")]
+self_modulate = Color(1.353256, 1.353256, 1.353256, 1)
+position = Vector2(-967.3469, 151.02042)
+scale = Vector2(2.0408163, 2.0408163)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=873617264]
+process_mode = 1
+z_index = -10
+tile_set = SubResource("TileSet_cxncl")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1708752651]
+process_mode = 1
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(600, 600)
+repeat_times = 11
+follow_viewport = false
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=1816038429]
+process_mode = 1
+self_modulate = Color(0.671152, 0.671152, 0.671152, 1)
+z_index = -100
+
+[node name="Shaders" type="AnimationPlayer" parent="." unique_id=644168659]
+libraries/ = SubResource("AnimationLibrary_15f4b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=927157588]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1769928330]
+material = SubResource("ShaderMaterial_72wke")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 5.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="animation_finished" from="Shaders" to="Player" method="_on_shaders_animation_finished"]

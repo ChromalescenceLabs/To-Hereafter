@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://brbsrt3iax1g0"]
+
+[ext_resource type="Script" uid="uid://4aseks5gddyt" path="res://Scripts/fireball.gd" id="1_xi7wk"]
+
+[sub_resource type="Curve" id="Curve_0mxqg"]
+_data = [Vector2(0, 0.9223108), 0.0, 0.0, 0, 0, Vector2(0.57022476, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mxqg"]
+
+[node name="projectile" type="Area2D" unique_id=1997698843]
+script = ExtResource("1_xi7wk")
+
+[node name="fireball" type="ColorRect" parent="." unique_id=1073729522]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(0.92156863, 0.6431373, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="explosion" type="Node2D" parent="fireball" unique_id=1149827924]
+visible = false
+scale = Vector2(0.7791869, 0.4681862)
+
+[node name="explosion" type="CPUParticles2D" parent="fireball/explosion" unique_id=1268674368]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(6, 6)
+scale = Vector2(10, 10)
+amount = 30
+lifetime = 0.5
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_0mxqg")
+color = Color(0.92156863, 0.6431373, 0, 1)
+
+[node name="fire" type="Node2D" parent="fireball" unique_id=1740188590]
+self_modulate = Color(3.064705, 3.064705, 3.064705, 1)
+scale = Vector2(0.7791869, 0.4681862)
+
+[node name="fire" type="CPUParticles2D" parent="fireball/fire" unique_id=1400682090]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(2.5667787, 10.679512)
+scale = Vector2(10, 10)
+amount = 30
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_0mxqg")
+color = Color(0.92156863, 0.6431373, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550018033]
+shape = SubResource("CircleShape2D_0mxqg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

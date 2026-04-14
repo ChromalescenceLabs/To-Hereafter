@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://vq7x6xbbvwvb"]
+
+[ext_resource type="Texture2D" uid="uid://ldbuk4h6ifk5" path="res://Assets/Personality Test/Terminus.png" id="1_kx1fu"]
+[ext_resource type="Script" uid="uid://d2f2rx7ockd3i" path="res://Scripts/PersonalityTest/personality_test.gd" id="1_r0fjq"]
+[ext_resource type="Texture2D" uid="uid://bjv5tnn2wuwrt" path="res://Assets/Personality Test/Questions/Q1.png" id="3_f485n"]
+[ext_resource type="Texture2D" uid="uid://ddsw3u7chuj4p" path="res://Assets/Personality Test/OptionContainer.png" id="3_i7o33"]
+[ext_resource type="Texture2D" uid="uid://bftdrsvb78fqe" path="res://Assets/Personality Test/Questions/Q2.png" id="4_o41he"]
+[ext_resource type="Texture2D" uid="uid://2i3ixtw0aci4" path="res://Assets/Personality Test/Questions/Q3.png" id="5_7eqkh"]
+[ext_resource type="Texture2D" uid="uid://bs7lfbbguf0tq" path="res://Assets/Personality Test/Questions/Q4.png" id="6_57mqf"]
+[ext_resource type="Texture2D" uid="uid://dd1ystf0ksr7a" path="res://Assets/Personality Test/Questions/Q5.png" id="7_xriq6"]
+
+[node name="PersonalityTest" type="Control" unique_id=1471265649]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_r0fjq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1238783023]
+z_index = -1
+layout_mode = 0
+offset_left = -694.0
+offset_top = -451.0
+offset_right = 753.0
+offset_bottom = 400.0
+color = Color(0, 0, 0, 1)
+
+[node name="Terminus" type="Sprite2D" parent="." unique_id=2085223683]
+visible = false
+position = Vector2(60, 204)
+scale = Vector2(0.76662904, 0.766629)
+texture = ExtResource("1_kx1fu")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="." unique_id=771200413]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 75.385
+offset_right = 400.0
+offset_bottom = 323.38525
+grow_horizontal = 2
+
+[node name="Q1" type="Sprite2D" parent="OptionsContainer" unique_id=529083097]
+visible = false
+position = Vector2(401, -80)
+texture = ExtResource("3_f485n")
+
+[node name="Q2" type="Sprite2D" parent="OptionsContainer" unique_id=2044832882]
+visible = false
+position = Vector2(401, -80)
+texture = ExtResource("4_o41he")
+
+[node name="Q3" type="Sprite2D" parent="OptionsContainer" unique_id=839178596]
+visible = false
+position = Vector2(401, -80)
+texture = ExtResource("5_7eqkh")
+
+[node name="Q4" type="Sprite2D" parent="OptionsContainer" unique_id=1426926856]
+visible = false
+position = Vector2(401, -80)
+texture = ExtResource("6_57mqf")
+
+[node name="Q5" type="Sprite2D" parent="OptionsContainer" unique_id=1304962372]
+visible = false
+position = Vector2(401, -80)
+texture = ExtResource("7_xriq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="OptionsContainer" unique_id=945109430]
+position = Vector2(401, 120)
+texture = ExtResource("3_i7o33")

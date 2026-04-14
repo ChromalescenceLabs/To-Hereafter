@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://u4lkmvga7xor"]
+
+[ext_resource type="Texture2D" uid="uid://cfv2iagiduq3w" path="res://Assets/Buffer Area/image.jpg" id="1_j5fyi"]
+[ext_resource type="Script" uid="uid://ctpdt1lgtip8e" path="res://Scripts/Angel/upgrade_angel.gd" id="2_llt0b"]
+[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://Scenes/Interaction Components/interactable.tscn" id="3_0c7an"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi1rx"]
+size = Vector2(332.54166, 261.55847)
+
+[node name="Upgrade" type="Sprite2D" unique_id=892918844 node_paths=PackedStringArray("interactable")]
+scale = Vector2(0.27665707, 0.58113205)
+texture = ExtResource("1_j5fyi")
+script = ExtResource("2_llt0b")
+interactable = NodePath("Interactable")
+
+[node name="Interactable" parent="." unique_id=436187935 instance=ExtResource("3_0c7an")]
+interact_name = "Upgrades"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1173226387]
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_oi1rx")

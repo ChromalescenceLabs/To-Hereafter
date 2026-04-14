@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dnw2bv5aebpyx"]
+
+[ext_resource type="Texture2D" uid="uid://go6x543fa7e8" path="res://Assets/Personality Test/Option.png" id="1_hr42s"]
+[ext_resource type="Texture2D" uid="uid://db0hjl0a73eb0" path="res://Assets/Personality Test/OptionH.png" id="2_1nohn"]
+[ext_resource type="Script" uid="uid://b8xogvfnfssb7" path="res://Scripts/PersonalityTest/option_button_compassionate.gd" id="3_1nohn"]
+[ext_resource type="Texture2D" uid="uid://dql35nrl5s7ea" path="res://Assets/Personality Test/Answers/Q1/Compassionate.png" id="4_rnqje"]
+[ext_resource type="Texture2D" uid="uid://dbek10fcwusgj" path="res://Assets/Personality Test/Answers/Q2/Compassionate.png" id="5_0fy8y"]
+[ext_resource type="Texture2D" uid="uid://bbfpbrqrfpp40" path="res://Assets/Personality Test/Answers/Q3/Compassionate.png" id="6_l0ud8"]
+[ext_resource type="Texture2D" uid="uid://bd8mdsr4u8cm7" path="res://Assets/Personality Test/Answers/Q4/Compassionate.png" id="7_471gf"]
+[ext_resource type="Texture2D" uid="uid://cf013vjg6l4ob" path="res://Assets/Personality Test/Answers/Q5/Compassionate.png" id="8_ewj7m"]
+
+[node name="OptionButtonComp" type="TextureButton" unique_id=1721576700]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_hr42s")
+texture_pressed = ExtResource("1_hr42s")
+texture_hover = ExtResource("2_1nohn")
+script = ExtResource("3_1nohn")
+
+[node name="Q1" type="Sprite2D" parent="." unique_id=749771498]
+visible = false
+texture = ExtResource("4_rnqje")
+centered = false
+
+[node name="Q2" type="Sprite2D" parent="." unique_id=1209739569]
+visible = false
+texture = ExtResource("5_0fy8y")
+centered = false
+
+[node name="Q3" type="Sprite2D" parent="." unique_id=359815768]
+visible = false
+texture = ExtResource("6_l0ud8")
+centered = false
+
+[node name="Q4" type="Sprite2D" parent="." unique_id=287149770]
+visible = false
+texture = ExtResource("7_471gf")
+centered = false
+
+[node name="Q5" type="Sprite2D" parent="." unique_id=1686709237]
+visible = false
+texture = ExtResource("8_ewj7m")
+centered = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

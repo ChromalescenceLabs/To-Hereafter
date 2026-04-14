@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cur8tm1xt2km1"]
+
+[ext_resource type="AudioStream" uid="uid://btx8wdvm4brrp" path="res://Audio/The Reaper who Weeps (1).mp3" id="1_8ymxd"]
+[ext_resource type="Script" uid="uid://hivelh5yjkxs" path="res://Scripts/Audio/main_menu_music.gd" id="2_0lc4o"]
+[ext_resource type="AudioStream" uid="uid://gtg0qjf02g14" path="res://Audio/ExpoDump.mp3" id="3_qqfsm"]
+[ext_resource type="AudioStream" uid="uid://d1rx2bpgmw310" path="res://Audio/Uncomfy3.2.mp3" id="4_0lc4o"]
+
+[node name="MainMenu Music" type="AudioStreamPlayer" unique_id=1511048505]
+process_mode = 3
+stream = ExtResource("1_8ymxd")
+bus = &"Music"
+script = ExtResource("2_0lc4o")
+
+[node name="ExpoDumpMusic" type="AudioStreamPlayer" parent="." unique_id=1677745341]
+stream = ExtResource("3_qqfsm")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="PersonalityTest" type="AudioStreamPlayer" parent="." unique_id=1050875952]
+stream = ExtResource("4_0lc4o")
+bus = &"Music"
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="finished" from="ExpoDumpMusic" to="." method="_on_expo_dump_music_finished"]
+[connection signal="finished" from="PersonalityTest" to="." method="_on_personality_test_finished"]

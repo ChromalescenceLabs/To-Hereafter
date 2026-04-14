@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dshah3f0rfdhk"]
+
+[ext_resource type="Script" uid="uid://c0gftc2px55t5" path="res://Scripts/ui.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://4mf04m051r6i" path="res://Scripts/wheel_options.gd" id="3_8gbba"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8gbba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gbba"]
+atlas = SubResource("PlaceholderTexture2D_8gbba")
+script = ExtResource("3_8gbba")
+name = "none"
+metadata/_custom_type_script = "uid://4mf04m051r6i"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jjvhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjvhh"]
+atlas = SubResource("PlaceholderTexture2D_jjvhh")
+script = ExtResource("3_8gbba")
+name = "Transform 1"
+metadata/_custom_type_script = "uid://4mf04m051r6i"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kry3j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kry3j"]
+atlas = SubResource("PlaceholderTexture2D_kry3j")
+script = ExtResource("3_8gbba")
+name = "Transform 2"
+metadata/_custom_type_script = "uid://4mf04m051r6i"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_21xkr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21xkr"]
+atlas = SubResource("PlaceholderTexture2D_21xkr")
+script = ExtResource("3_8gbba")
+name = "Transform 3"
+metadata/_custom_type_script = "uid://4mf04m051r6i"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6bp64"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bp64"]
+atlas = SubResource("PlaceholderTexture2D_6bp64")
+script = ExtResource("3_8gbba")
+name = "Transform 4"
+metadata/_custom_type_script = "uid://4mf04m051r6i"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_344ge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynf5e"]
+atlas = SubResource("PlaceholderTexture2D_344ge")
+script = ExtResource("3_8gbba")
+name = "Transform 5"
+metadata/_custom_type_script = "uid://4mf04m051r6i"
+
+[node name="Main" type="Node" unique_id=1377387565]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=515940496]
+script = ExtResource("1_bo1nx")
+
+[node name="Label" type="Label" parent="UI" unique_id=1361461892]
+offset_right = 193.0
+offset_bottom = 23.0
+text = "Player Transformation: []"
+
+[node name="SelectionWheel" parent="UI" unique_id=1740633210 instance=ExtResource("1_jjgbg")]
+visible = false
+options = Array[ExtResource("3_8gbba")]([SubResource("AtlasTexture_8gbba"), SubResource("AtlasTexture_jjvhh"), SubResource("AtlasTexture_kry3j"), SubResource("AtlasTexture_21xkr"), SubResource("AtlasTexture_6bp64"), SubResource("AtlasTexture_ynf5e")])

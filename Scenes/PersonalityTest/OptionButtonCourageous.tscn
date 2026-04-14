@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cnqomw0enool4"]
+
+[ext_resource type="Texture2D" uid="uid://go6x543fa7e8" path="res://Assets/Personality Test/Option.png" id="1_p5djg"]
+[ext_resource type="Texture2D" uid="uid://db0hjl0a73eb0" path="res://Assets/Personality Test/OptionH.png" id="2_r4cuj"]
+[ext_resource type="Script" uid="uid://b4ly1afvp6tnl" path="res://Scripts/PersonalityTest/option_button_courageous.gd" id="3_r4cuj"]
+[ext_resource type="Texture2D" uid="uid://bwldu14ffjnbw" path="res://Assets/Personality Test/Answers/Q1/Courageous.png" id="4_n2k35"]
+[ext_resource type="Texture2D" uid="uid://bggas1qwgqin7" path="res://Assets/Personality Test/Answers/Q2/Courageous.png" id="5_5610q"]
+[ext_resource type="Texture2D" uid="uid://wjifevx2rb6h" path="res://Assets/Personality Test/Answers/Q3/Courageous.png" id="6_2c2yj"]
+[ext_resource type="Texture2D" uid="uid://wl7n5npmvv85" path="res://Assets/Personality Test/Answers/Q4/Courageous.png" id="7_m17fs"]
+[ext_resource type="Texture2D" uid="uid://ctsiy4tvacl66" path="res://Assets/Personality Test/Answers/Q5/Courageous.png" id="8_qfnhk"]
+
+[node name="OptionButtonCourage" type="TextureButton" unique_id=1721576700]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_p5djg")
+texture_pressed = ExtResource("1_p5djg")
+texture_hover = ExtResource("2_r4cuj")
+script = ExtResource("3_r4cuj")
+
+[node name="Q1" type="Sprite2D" parent="." unique_id=1168658292]
+visible = false
+texture = ExtResource("4_n2k35")
+centered = false
+
+[node name="Q2" type="Sprite2D" parent="." unique_id=566855951]
+visible = false
+texture = ExtResource("5_5610q")
+centered = false
+
+[node name="Q3" type="Sprite2D" parent="." unique_id=1027016150]
+visible = false
+texture = ExtResource("6_2c2yj")
+centered = false
+
+[node name="Q4" type="Sprite2D" parent="." unique_id=1521300037]
+visible = false
+texture = ExtResource("7_m17fs")
+centered = false
+
+[node name="Q5" type="Sprite2D" parent="." unique_id=1484097884]
+visible = false
+texture = ExtResource("8_qfnhk")
+centered = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

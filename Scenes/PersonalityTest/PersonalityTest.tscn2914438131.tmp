@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://vq7x6xbbvwvb"]
+
+[ext_resource type="Texture2D" uid="uid://ldbuk4h6ifk5" path="res://Assets/Personality Test/Terminus.png" id="1_kx1fu"]
+[ext_resource type="Script" uid="uid://d2f2rx7ockd3i" path="res://Scripts/PersonalityTest/personality_test.gd" id="1_r0fjq"]
+[ext_resource type="Texture2D" uid="uid://ddsw3u7chuj4p" path="res://Assets/Personality Test/OptionContainer.png" id="3_i7o33"]
+[ext_resource type="PackedScene" uid="uid://etxrw1xsmd7f" path="res://Scenes/PersonalityTest/OptionButton.tscn" id="4_dfkij"]
+
+[node name="PersonalityTest" type="Control" unique_id=1471265649]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_r0fjq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1238783023]
+z_index = -1
+layout_mode = 0
+offset_left = -694.0
+offset_top = -451.0
+offset_right = 753.0
+offset_bottom = 400.0
+color = Color(0, 0, 0, 1)
+
+[node name="Terminus" type="Sprite2D" parent="." unique_id=2085223683]
+visible = false
+position = Vector2(699, 535)
+scale = Vector2(0.76662904, 0.766629)
+texture = ExtResource("1_kx1fu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=771200413]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_right = 400.0
+offset_bottom = 248.0
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer" unique_id=945109430]
+position = Vector2(401, 120)
+texture = ExtResource("3_i7o33")
+
+[node name="OptionButton" parent="VBoxContainer" unique_id=1721576700 instance=ExtResource("4_dfkij")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OptionButton2" parent="VBoxContainer" unique_id=1029663502 instance=ExtResource("4_dfkij")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OptionButton3" parent="VBoxContainer" unique_id=719346274 instance=ExtResource("4_dfkij")]
+layout_mode = 2
+size_flags_vertical = 3

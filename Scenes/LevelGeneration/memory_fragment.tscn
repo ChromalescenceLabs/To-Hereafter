@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://r3om2v7ntmx4"]
+
+[ext_resource type="Texture2D" uid="uid://bmi8gaujxawlr" path="res://Assets/Level Essentials/MemoryFragment.png" id="1_2pq2d"]
+[ext_resource type="Script" uid="uid://cpgmxxo8aptlg" path="res://Scripts/Level Generation/memory_fragment.gd" id="1_4v4wq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4v4wq"]
+radius = 11.0
+
+[node name="Memory Fragment" type="Area2D" unique_id=145788368]
+script = ExtResource("1_4v4wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=519713379]
+shape = SubResource("CircleShape2D_4v4wq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242527740]
+texture = ExtResource("1_2pq2d")
+region_enabled = true
+region_rect = Rect2(0, 0.995, 30, 30)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

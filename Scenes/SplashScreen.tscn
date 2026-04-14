@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b6u51oj4l0ahl"]
+
+[ext_resource type="Texture2D" uid="uid://b7eydkl3rtlmv" path="res://Assets/Splash Screen/CL Splash Screen Image.png" id="1_acvwv"]
+[ext_resource type="Script" uid="uid://cqs3gk4ae6iyd" path="res://Scripts/splash_screen.gd" id="1_pufkq"]
+[ext_resource type="Shader" uid="uid://5cpe62pdgebg" path="res://Shaders/Inversion.gdshader" id="2_7m5qv"]
+[ext_resource type="Texture2D" uid="uid://pdv4m2g1hles" path="res://Assets/Splash Screen/CL Logo.png" id="2_lus2m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ki8ww"]
+shader = ExtResource("2_7m5qv")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.1
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.01
+
+[node name="Splash Screen" type="Node2D" unique_id=564730703]
+script = ExtResource("1_pufkq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=554419229]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=762068892]
+material = SubResource("ShaderMaterial_ki8ww")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -98.0
+offset_right = -41.652954
+offset_bottom = -105.12915
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4698077, 0.4727364)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1038808121]
+offset_left = -22.0
+offset_top = -21.0
+offset_right = 1301.0
+offset_bottom = 744.0
+color = Color(0, 0, 0, 1)
+
+[node name="CL_Text" type="Sprite2D" parent="." unique_id=585691683]
+position = Vector2(17, 19.000002)
+scale = Vector2(1.0833333, 1.0833333)
+texture = ExtResource("1_acvwv")
+
+[node name="CL_Logo" type="Sprite2D" parent="." unique_id=500007138]
+position = Vector2(646, 370)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_lus2m")

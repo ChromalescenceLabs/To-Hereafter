@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cvp7sk28csjfr"]
+
+[ext_resource type="Script" uid="uid://dxbohorh1gj0e" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://i83lwf5er4eb" path="res://Assets/Main Menu/Begin.png" id="2_rrcx7"]
+[ext_resource type="Texture2D" uid="uid://b5jlkegwqxtso" path="res://Assets/Main Menu/BeginH.png" id="3_fh7cp"]
+[ext_resource type="Texture2D" uid="uid://d0ra65q8gdg10" path="res://Assets/Main Menu/Load.png" id="4_8e205"]
+[ext_resource type="Texture2D" uid="uid://dftlbua3hhkaw" path="res://Assets/Main Menu/LoadH.png" id="5_7467j"]
+[ext_resource type="Texture2D" uid="uid://bx064vo605myt" path="res://Assets/Main Menu/Save.png" id="6_2x1g0"]
+[ext_resource type="Texture2D" uid="uid://dovi1xvrkii1r" path="res://Assets/Main Menu/SaveH.png" id="7_riqfo"]
+[ext_resource type="Texture2D" uid="uid://cpoddvtnbj5li" path="res://Assets/Main Menu/Options.png" id="8_yxkem"]
+[ext_resource type="Texture2D" uid="uid://jn13568qklyl" path="res://Assets/Main Menu/OptionsH.png" id="9_7v4os"]
+[ext_resource type="Texture2D" uid="uid://3a0hxqps0jsb" path="res://Assets/Main Menu/Quit.png" id="10_pjscj"]
+[ext_resource type="Texture2D" uid="uid://82arg3ping28" path="res://Assets/Main Menu/QuitH.png" id="11_m7n2d"]
+[ext_resource type="Texture2D" uid="uid://dj3g2wccuxxcn" path="res://Assets/Main Menu/MainMenuBG.png" id="12_65hh5"]
+
+[node name="MainMenu" type="Control" unique_id=2061407560]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tt5f1")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=808975745]
+z_index = 10
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 754.0
+offset_top = 356.0
+offset_right = 958.0
+offset_bottom = 568.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.41, 1.41)
+mouse_filter = 2
+
+[node name="Begin" type="TextureButton" parent="ButtonContainer" unique_id=1279735977]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("2_rrcx7")
+texture_pressed = ExtResource("2_rrcx7")
+texture_hover = ExtResource("3_fh7cp")
+
+[node name="Save-Load" type="HBoxContainer" parent="ButtonContainer" unique_id=947433158]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="Load" type="TextureButton" parent="ButtonContainer/Save-Load" unique_id=141448998]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("4_8e205")
+texture_pressed = ExtResource("4_8e205")
+texture_hover = ExtResource("5_7467j")
+
+[node name="Save" type="TextureButton" parent="ButtonContainer/Save-Load" unique_id=1426851950]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_2x1g0")
+texture_pressed = ExtResource("6_2x1g0")
+texture_hover = ExtResource("7_riqfo")
+
+[node name="Options" type="TextureButton" parent="ButtonContainer" unique_id=1276754488]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("8_yxkem")
+texture_pressed = ExtResource("8_yxkem")
+texture_hover = ExtResource("9_7v4os")
+
+[node name="Quit" type="TextureButton" parent="ButtonContainer" unique_id=1249119456]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("10_pjscj")
+texture_pressed = ExtResource("10_pjscj")
+texture_hover = ExtResource("11_m7n2d")
+
+[node name="MainMenuBG" type="TextureRect" parent="." unique_id=155987547]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("12_65hh5")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="ButtonContainer/Begin" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="ButtonContainer/Save-Load/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="ButtonContainer/Save-Load/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="ButtonContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]

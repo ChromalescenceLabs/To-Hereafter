@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dst1hv3o188kr"]
+
+[ext_resource type="Texture2D" uid="uid://cfv2iagiduq3w" path="res://Assets/Buffer Area/image.jpg" id="1_ndbsg"]
+[ext_resource type="Script" uid="uid://w8eq7n5k56xo" path="res://Scripts/Angel/progress_angel.gd" id="2_ndbsg"]
+[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://Scenes/Interaction Components/interactable.tscn" id="3_vrc0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi1rx"]
+size = Vector2(332.54166, 261.55847)
+
+[node name="Progress" type="Sprite2D" unique_id=892918844 node_paths=PackedStringArray("interactable")]
+scale = Vector2(0.27665707, 0.58113205)
+texture = ExtResource("1_ndbsg")
+script = ExtResource("2_ndbsg")
+interactable = NodePath("Interactable")
+
+[node name="Interactable" parent="." unique_id=436187935 instance=ExtResource("3_vrc0j")]
+interact_name = "Progress"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1173226387]
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_oi1rx")
